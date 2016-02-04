@@ -3,8 +3,10 @@ sedata - sedata.js
  Copyright(c) 2016 Jigme Ko <jigme1968@gmail.com>
  MIT Licensed
  */
-var sinadata;
+var sinadata,tsdata;
 sinadata = require('./lib/sinadata');
-module.export = {
-  ticks: sinadata.ticks
+tsdata = require('./lib/tsdata');
+module.exports = {
+  ticks: sinadata.ticks,
+  tsdata: tsdata
 };
