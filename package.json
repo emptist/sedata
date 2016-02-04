@@ -1,6 +1,6 @@
 {
   "name": "sedata",
-  "version": "0.1.1",
+  "version": "0.2.1",
   "description": "Get security data(China market only for now)",
   "main": "sedata.js",
   "scripts": {
@@ -18,6 +18,7 @@
   "homepage": "https://github.com/emptist/sedata#readme",
   "dependencies": {
     "iconv-lite": "^0.4.13",
+    "python-shell": "^0.3.0",
     "request": "^2.69.0",
     "secode": "0.1.0-a"
   }

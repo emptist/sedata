@@ -9,7 +9,7 @@ sedata
 [download-image]: https://img.shields.io/npm/dm/sedata.svg?style=flat-square
 [download-url]: https://npmjs.org/package/sedata
 
-Manipulating security codes, for China market only for now.
+For China market only for now.
 
 
 ## Install
@@ -29,7 +29,7 @@ sedata.ticks('159915,600663',function(object){
 });
 ```
 
-also see comments in source code
+See also example.js
 
 ## License
 

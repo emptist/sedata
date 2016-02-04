@@ -1,25 +1,12 @@
 ###
-sedata - sedata.js
- Copyright(c) 2016 Jigme Ko <jigme1968@gmail.com>
+ Copyright(c) 2016- Jigme Ko <jigme1968@gmail.com>
  MIT Licensed
-###
-###
-Usage
-
-in coffeescript:
-  {ticks} = require 'sedata'
-  codes = "900901,000002sz,600603sh,200429,159915"
-  ticks codes, (obj)->
-    {sh900901,sz159915,sh600603} = obj
-    console.log('here:',sh600603.market,sz159915.ask5)
-
 ###
 
 {restring,recode} = require 'secode'
 request = require 'request'
 iconv = require 'iconv-lite'
-# or we can use encoding module
-# encoding = require 'encoding'
+
 hqstr2obj = (code,tickstr,obj)->
   c = recode(code,0)
   #tickstr = eval("hq_str_#{code}")
@@ -74,7 +61,6 @@ sinaticks = (string, callback)->
     encoding:null
 
   request options, (err, res, data)->
-    #text=(encoding.convert data, 'utf8', 'GBK').toString()
     text=iconv.decode(data, 'GBK')
 
     # TODO: 替換掉 eval
@@ -87,10 +73,3 @@ sinaticks = (string, callback)->
 
 module.exports =
   ticks: sinaticks
-
-###{ticks} = require 'sedata'
-codes = "900901,000002sz,600603sh,200429,159915"
-ticks codes, (obj)->
-  {sh900901,sz159915,sh600603} = obj
-  console.log('here:',sh600603.market,sz159915.ask5)
-###
