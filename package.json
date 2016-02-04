@@ -1,0 +1,24 @@
+{
+  "name": "sedata",
+  "version": "0.1.0",
+  "description": "Get security data(China market only for now)",
+  "main": "sedata.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emptist/sedata.git"
+  },
+  "author": "Jigme Ko <jigme1968@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/emptist/sedata/issues"
+  },
+  "homepage": "https://github.com/emptist/sedata#readme",
+  "dependencies": {
+    "iconv-lite": "^0.4.13",
+    "request": "^2.69.0",
+    "secode": "0.1.0-a"
+  }
+}
