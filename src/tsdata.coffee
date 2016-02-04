@@ -11,7 +11,7 @@
 ###
 
 Pysh = require 'python-shell'
-pysh = new Pysh './lib/getjson.py', {mode:'json'}
+pysh = new Pysh './getjson.py', {mode:'json'}
 
 tsdata = (command, callback)->
   pysh.on 'message', (json)->
