@@ -11,9 +11,10 @@
 ###
 
 Pysh = require 'python-shell'
-pysh = new Pysh './getjson.py', {mode:'json'}
 
 tsdata = (command, callback)->
+  # 用完即退出
+  pysh = new Pysh './getjson.py', {mode:'json'}
   pysh.on 'message', (json)->
     callback json
 
