@@ -4,10 +4,10 @@
   "description": "Get security data(China market only for now)",
   "main": "sedata.js",
   "scripts": {
-    "cup":"coffee -bcmo lib/ src/ & git commit -am 'minor update' & git push",
-    "cupminor": "verion minor & coffee -bcmo lib/ src/ & git commit -am 'minor update' & git push",
-    "cupmajor": "verion major & coffee -bcmo lib/ src/ & git commit -am 'minor update' & git push",
-    "cuppatch": "verion patch & coffee -bcmo lib/ src/ & git commit -am 'minor update' & git push",
+    "cup":"coffee -bcmo lib/ src/ & git commit -am 'modified' & git push & cd ..",
+    "cupminor": "verion minor & coffee -bcmo lib/ src/ & git commit -am 'minor update' & git push & cd ..",
+    "cupmajor": "verion major & coffee -bcmo lib/ src/ & git commit -am 'major update' & git push & cd ..",
+    "cuppatch": "verion patch & coffee -bcmo lib/ src/ & git commit -am 'patch update' & git push & cd ..",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,7 +22,7 @@
   "homepage": "https://github.com/emptist/sedata#readme",
   "dependencies": {
     "iconv-lite": "^0.4.13",
-    "python-shell": "^0.3.0",
+    "python-shell": "*",
     "request": "^2.69.0",
     "secode": "*"
   }
