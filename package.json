@@ -4,10 +4,10 @@
   "description": "Get security data(China market only for now)",
   "main": "sedata.js",
   "scripts": {
-    "cup":"coffee -bcmo lib/ src/ & git commit -am 'minor updat' & cd .. & npm publish sedata",
-    "cupminor": "verion minor & coffee -bcmo lib/ src/ & git commit -am 'minor updat' & cd .. & npm publish sedata",
-    "cupmajor": "verion major & coffee -bcmo lib/ src/ & git commit -am 'minor updat' & cd .. & npm publish sedata",
-    "cuppatch": "verion patch & coffee -bcmo lib/ src/ & git commit -am 'minor updat' & cd .. & npm publish sedata",
+    "cup":"coffee -bcmo lib/ src/ & git commit -am 'minor update' & git push",
+    "cupminor": "verion minor & coffee -bcmo lib/ src/ & git commit -am 'minor update' & git push",
+    "cupmajor": "verion major & coffee -bcmo lib/ src/ & git commit -am 'minor update' & git push",
+    "cuppatch": "verion patch & coffee -bcmo lib/ src/ & git commit -am 'minor update' & git push",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
