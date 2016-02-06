@@ -17,4 +17,4 @@ def query(line):
             data = ts.__getattribute__(funcname).to_json()
         return data
     else:
-        raise Error(data)
+        raise NameError(data)

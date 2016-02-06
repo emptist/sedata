@@ -4,5 +4,8 @@ import sys
 import tsquery as ts
 
 for line in sys.stdin:
-    data = ts.query(line)
-    print(data)
+    try:
+        data = ts.query(line)
+        print(data)
+    except Exception as e:
+        raise e
