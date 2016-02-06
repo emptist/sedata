@@ -1,4 +1,4 @@
-{ticks,tsdata} = require '../sedata'
+{ticks,tsdata,tsocket} = require '../sedata'
 
 tsdata {func:'get_hist_data', args:"'300388',ktype='W'"}, (res)->
   console.log res
