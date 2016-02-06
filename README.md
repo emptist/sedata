@@ -20,13 +20,18 @@ $ npm install sedata
 
 ## Usage
 
-tsdata 是用於執行Python程序的,取得數據之後,就會退出Python,再次工作時再啟動Python,因此不是
-連續交換信息的工具.適合用於下載歷史數據等不需要即時處理的任務.
-tsock 通過socket與Python服務器保持聯絡,可以隨時申請取得數據.(尚未完成)
 ticks 從網上取得實時數據,速度取決於網絡狀況和數據源服務器.
 
+tsdata 是用於執行Python程序的,取得數據之後,就會退出Python,再次工作時再啟動Python,因此不是
+連續交換信息的工具.適合用於下載歷史數據等不需要即時處理的任務.
+
+tsocket 通過socket與Python服務器保持聯絡,可以隨時申請取得數據.
+ 目前限制:
+ 1. 需手工運行lib/tsocket.py, 然後使用.
+ 2. 體積大的數據不行
+
 ```coffeescript
-{ticks,tsdata} = require 'sedata'
+{ticks,tsdata,tsocket} = require 'sedata'
 
 tsdata {func:'get_hist_data', args:"'300388',ktype='W'"}, (res)->
   console.log res
