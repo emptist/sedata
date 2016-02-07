@@ -12,16 +12,22 @@
 
 Pysh = require 'python-shell'
 
+options =
+  mode:'json'
+  pythonOptions:['-u']
+
+pysh = new Pysh './getjson.py', options
+
 tsdata = (command, callback)->
-  # 用完即退出
-  pysh = new Pysh './getjson.py', {mode:'json'}
+  # 用完退出只需 pysh.done()
   pysh.on 'message', (json)->
-    callback json
+    callback pysh,json
+
+  pysh.done = ->
+    pysh.end (err)->
+      throw err if err
+      console.info 'done.'
 
   pysh.send command
-
-  pysh.end (err)->
-    throw err if err
-    console.info 'done.'
 
 module.exports = tsdata

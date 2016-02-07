@@ -1,5 +1,7 @@
 net = require 'net'
 ###
+  ** Use tsdata instead! **
+
   先須手工運行 tsocket.py
   然後可照以下方法做
 ###
