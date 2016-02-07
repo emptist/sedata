@@ -7,46 +7,46 @@
 request = require 'request'
 iconv = require 'iconv-lite'
 
-hqstr2obj = (code,tickstr,obj)->
-  c = recode(code,0)
-  #tickstr = eval("hq_str_#{code}")
+hqstr2obj = (代碼,tickstr,obj)->
+  c = recode(代碼,0)
+  #tickstr = eval("hq_str_#{代碼}")
   tick = "#{c},#{tickstr}".split(',')
   # 共有34項,最後一項不知何用
-  obj[code] =
-    code:tick[0]
-    name:tick[1]
-    open: Number(tick[2])
-    close: Number(tick[3])
-    latest: Number(tick[4])
-    high: Number(tick[5])
-    low: Number(tick[6])
-    bid: Number(tick[7]) # 買入報價
-    ask: Number(tick[8]) # 賣出要價
-    volume: Number(tick[9])
-    amount: Number(tick[10])
-    bid1v: Number(tick[11])
-    bid1: Number(tick[12])
-    bid2v: Number(tick[13])
-    bid2: Number(tick[14])
-    bid3v: Number(tick[15])
-    bid3: Number(tick[16])
-    bid4v: Number(tick[17])
-    bid4: Number(tick[18])
-    bid5v: Number(tick[19])
-    bid5: Number(tick[20])
-    ask1v: Number(tick[21])
-    ask1: Number(tick[22])
-    ask2v: Number(tick[23])
-    ask2: Number(tick[24])
-    ask3v: Number(tick[25])
-    ask3: Number(tick[26])
-    ask4v: Number(tick[27])
-    ask4: Number(tick[28])
-    ask5v: Number(tick[29])
-    ask5: Number(tick[30])
-  obj[code].time = new Date tick[31..32].join(' ')# (tick[32..33].join(' '))
-  obj[code].ref = tick[33]
-  obj[code].market = code[..1]
+  obj[代碼] =
+    代碼:tick[0]
+    名稱:tick[1]
+    開: Number(tick[2])
+    收: Number(tick[3])
+    現: Number(tick[4])
+    高: Number(tick[5])
+    低: Number(tick[6])
+    買: Number(tick[7]) # 賣入報價
+    賣: Number(tick[8]) # 賣出要價
+    量: Number(tick[9])
+    額: Number(tick[10])
+    買量1: Number(tick[11])
+    買1: Number(tick[12])
+    買量2: Number(tick[13])
+    買2: Number(tick[14])
+    買量3: Number(tick[15])
+    買3: Number(tick[16])
+    買量4: Number(tick[17])
+    買4: Number(tick[18])
+    買量5: Number(tick[19])
+    買5: Number(tick[20])
+    賣量1: Number(tick[21])
+    賣1: Number(tick[22])
+    賣量2: Number(tick[23])
+    賣2: Number(tick[24])
+    賣量3: Number(tick[25])
+    賣3: Number(tick[26])
+    賣量4: Number(tick[27])
+    賣4: Number(tick[28])
+    賣量5: Number(tick[29])
+    賣5: Number(tick[30])
+  obj[代碼].時間 = new Date tick[31..32].join(' ')# (tick[32..33].join(' '))
+  obj[代碼].備註 = tick[33]
+  obj[代碼].市場代碼 = 代碼[..1]
   return obj
 
 sinaticks = (string, callback)->
@@ -65,9 +65,9 @@ sinaticks = (string, callback)->
 
     # TODO: 替換掉 eval
     eval(text)
-    for code in codes.split(',')
-      tickstr = eval("hq_str_#{code}")
-      hqstr2obj(code,tickstr,obj)
+    for 代碼 in codes.split(',')
+      tickstr = eval("hq_str_#{代碼}")
+      hqstr2obj(代碼,tickstr,obj)
 
     callback obj
 
