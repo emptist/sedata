@@ -1,10 +1,9 @@
 #-*- coding:UTF-8 -*-
 
-import json
 import tushare as ts
 
 def query(message):
-    data = json.dumps(message)
+    data = ''
     funcname = message['func']
     if message.get('args'):
         args = message['args']

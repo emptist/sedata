@@ -1,6 +1,6 @@
 #-*- coding:UTF-8 -*-
 
-import socket
+import socket,json
 import tsquery as ts
 from _thread import *
 
@@ -34,7 +34,7 @@ class SocketJSON(object):
             command = data.decode('utf-8')
             try:
                 # query tushare for data and sendback
-                conn.sendall(str.encode(ts.query(command)))
+                conn.sendall(str.encode(ts.query(json.loads(command))))
 
             except Exception as e:
                 print(str(e))
