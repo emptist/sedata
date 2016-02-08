@@ -18,16 +18,15 @@ options =
 
 pysh = new Pysh './getjson.py', options
 
+pysh.done = ->
+  pysh.end (err)->
+    throw err if err
+    console.info 'done.'
+
 tsdata = (command, callback)->
   # 用完退出只需 pysh.done()
   pysh.on 'message', (json)->
     callback pysh,json
-
-  pysh.done = ->
-    pysh.end (err)->
-      throw err if err
-      console.info 'done.'
-
   pysh.send command
 
 module.exports = tsdata
