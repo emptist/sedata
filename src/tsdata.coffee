@@ -11,10 +11,11 @@
 ###
 
 Pysh = require 'python-shell'
-
+#path = require 'path'
 options =
   mode:'json'
   pythonOptions:['-u']
+  scriptPath: __dirname
 
 pysh = new Pysh 'getjson.py', options
 
