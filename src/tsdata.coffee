@@ -16,7 +16,7 @@ options =
   mode:'json'
   pythonOptions:['-u']
 
-pysh = new Pysh './getjson.py', options
+pysh = new Pysh 'getjson.py', options
 
 pysh.done = ->
   pysh.end (err)->
