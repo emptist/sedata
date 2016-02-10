@@ -26,19 +26,20 @@ tsdata 是用於執行Python程序的,取得數據之後,pysh.done 就會退出P
 
 
 ```coffeescript
-{ticks,tsdata} = require 'sedata'
-
-tsdata {func:'get_hist_data', args:"'300388',ktype='W'"}, (p,res)->
+{ticks,Tushare} = require 'sedata'
+ts = new Tushare()
+ts.data {func:'get_hist_data', args:"'300388',ktype='W'"}, (res)->
   console.log res
-  p.done()
+ts.done()
 
-  codes = "900901,000002sz,600603sh,200429,159915"
-  ticks codes, (obj)->
-    {買,名稱,賣5} = obj.sz159915
-    console.log('here:',買,名稱,賣5)
+
+codes = "900901,000002sz,600603sh,200429,159915"
+ticks codes, (obj)->
+  {買,名稱,賣5} = obj.sz159915
+  console.log('here:',買,名稱,賣5)
 ```
 
-See also example.js
+See also example
 
 ## License
 
