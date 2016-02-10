@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": ".tick_en.js",
+  "sourceRoot": "..",
+  "sources": [
+    "ref/.tick_en.coffee"
+  ],
+  "names": [],
+  "mappings": ";;AAAA"
+}

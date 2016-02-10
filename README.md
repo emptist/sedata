@@ -22,8 +22,6 @@ $ npm install sedata
 
 ticks 從網上取得實時數據,速度取決於網絡狀況和數據源服務器.
 
-tsdata 是用於執行Python程序的,取得數據之後,pysh.done 就會退出Python.
-
 
 ```coffeescript
 {ticks} = require 'sedata'
