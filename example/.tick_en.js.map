@@ -3,7 +3,7 @@
   "file": ".tick_en.js",
   "sourceRoot": "..",
   "sources": [
-    "ref/.tick_en.coffee"
+    "example/.tick_en.coffee"
   ],
   "names": [],
   "mappings": ";;AAAA"
