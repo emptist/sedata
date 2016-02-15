@@ -32,19 +32,4 @@ quotes = (param, callback) ->
       callback cnt #rows #url #csv2json (cnt), {delim: ',', textdelim:'\r', headers: headers.split(';')}
 
 
-### usage:
-###
-
-stock = '1000001'#(t.find '.stocks').value
-source = '163.com' # history
-
-#Session.set 'id', stock
-date = new Date()
-end = date.year * 1000 + date.hour * 100 + date.day
-quotes {ids: stock, start:20080801, end:end}, (data)->
-  console.log data
-  # dealing with the data here, for this case it's for a single stock
-  #Session.set 'history', GetData.rows
-  #renderChart()
-
 module.exports = quotes

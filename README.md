@@ -24,12 +24,20 @@ ticks 從網上取得實時數據,速度取決於網絡狀況和數據源服務�
 
 
 ```coffeescript
-{ticks} = require 'sedata'
+{ticks,histd} = require 'sedata'
 
 codes = "900901,000002sz,600603sh,200429,159915"
 ticks codes, (obj)->
   {買,名稱,賣5} = obj.sz159915
   console.log('here:',買,名稱,賣5)
+
+stock = '1000001'
+source = '163.com'
+
+date = new Date()
+end = date.year * 1000 + date.hour * 100 + date.day
+histd {ids: stock, start:20080801, end:end}, (data)->
+  console.log data
 ```
 
 See also example
