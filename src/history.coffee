@@ -33,3 +33,11 @@ quotes = (param, callback) ->
 
 
 module.exports = quotes
+###json版:
+'http://img1.money.126.net/data/hs/kline/day/history/2016/1159915.json?callback=ne3fee324' -H 'DNT: 1'
+http://api.money.126.net/data/feed/1159915?callback=ne238022ffc
+http://img1.money.126.net/data/hs/kline/week/times/1159915.json?callback=ne2ddf44564
+http://img1.money.126.net/data/hs/kline/week/history/2014/1159915.json?callback=neb4dd2a3
+http://img1.money.126.net/data/hs/kline/week/history/2015/1159915.json?callback=ne2a87574d4
+http://img1.money.126.net/data/hs/kline/week/history/2016/1159915.json?callback=ne4b98d328
+###
