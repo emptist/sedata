@@ -31,7 +31,7 @@ quotes = (param, callback) ->
           unless (res[3] is 0) or (res[4] is 0) or (res[5] is 0) or res[6] is 0
             rows.push date.concat res[3..6], res[11..11]
       #console.log cnt
-      callback cnt #rows #url #csv2json (cnt), {delim: ',', textdelim:'\r', headers: headers.split(';')}
+      callback csv2json (cnt), {delim: ',', textdelim:'\r', headers: headers.split(';')} #cnt #rows #url 
 
 
 module.exports = quotes
