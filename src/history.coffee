@@ -1,5 +1,7 @@
 request = require 'request'
 iconv = require 'iconv-lite'
+{recode,restring} = require 'secode'
+
 {csv2json} = require './csvjson'
 
 quotes = (param, callback) ->
