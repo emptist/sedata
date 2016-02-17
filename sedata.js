@@ -1,8 +1,10 @@
 var sinaticks = require("./lib/ticks");
-var histd = require("./lib/history");
+var sinahists = require("./lib/jsonsina")
+var histd = require("./lib/csv163");
 var hist = require("./lib/json126")
 module.exports = {
   ticks: sinaticks,
+  hists: sinahists,
   histd: histd,
-  hist:hist
+  histdwm: hist
 };

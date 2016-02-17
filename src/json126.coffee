@@ -1,5 +1,4 @@
 request = require 'request'
-iconv = require 'iconv-lite'
 {recode,restring} = require 'secode'
 
 

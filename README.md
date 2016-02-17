@@ -22,27 +22,48 @@ $ npm install sedata
 
 ticks 從網上取得實時數據,速度取決於網絡狀況和數據源服務器.
 
+稍後嘗試統一接口
 
 ```coffeescript
-{ticks,histd,hist} = require 'sedata'
+{ticks,hists,histd,histdwm} = require 'sedata'
 
-codes = "900901,000002sz,600603sh,200429,159915"
-ticks codes, (obj)->
+# from sina:
+
+symbols = "900901,000002sz,600603sh,200429,159915"
+
+#實時
+ticks symbols, (obj)->
   {買,名稱,賣5} = obj.sz159915
   console.log('here:',買,名稱,賣5)
 
-stock = '1000001'
+# 5,15,30,60,day,week
+hists {symbol:'900951',type:'week',len:0},(err,json)->
+  console.log json
+
+
+# from 163.com:
+
+# daily
+stock = '000001'
 date = new Date()
 end = date.year * 1000 + date.hour * 100 + date.day
 histd {ids: stock, start:20080801, end:end}, (data)->
   console.log data
 
-hist {market:'hs',code:'159915',year:'2016',type:'week'}, (err,json)->
+# daily, week, month, 分年度取
+histdwm {market:'hs',code:'159915',year:'2016',type:'week'}, (err,json)->
   console.log json unless err?
 
 ```
 
 See also example
+
+## Data Sources
+
+https://github.com/HarrisonXi/AStock/blob/master/%E5%8E%86%E5%8F%B2%E6%95%B0%E6%8D%AEAPI.md
+
+http://blog.sina.com.cn/s/blog_7ed3ed3d0101gphj.html
+http://www.wstock.net/wstock/5min.htm
 
 ## License
 
