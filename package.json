@@ -8,7 +8,6 @@
     "cupminor": " version minor & git commit -am 'minor update' & git push ",
     "cupmajor": " version major & git commit -am 'major update' & git push ",
     "cuppatch": " version patch & git commit -am 'patch update' & git push ",
-    "prepublish": "coffee -bcmo lib src",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -20,15 +20,27 @@ history = (param, callback)->
 
   c = recode param.symbol, 1
   host = "http://money.finance.sina.com.cn/quotes_service/api/json_v2.php"
-  url = "#{host}/CN_MarketData.getKLineData?symbol=#{c}&scale=#{scale[param.type]}&datalen=#{param.len}"
+  url = "#{host}/CN_MarketData.getKLineData?symbol=#{c}&scale=#{scale[param.type]}&datalen=0"
   options =
     url: url
-    json: true
-    #encoding:null
+    json: false
 
-  request.get options, (err, res, data)->
+  request.get options, (err, res, string)->
+    arr = eval string
     unless err?
-      #text = iconv.decode(data, 'GBK')
-      callback err,data
+      for each in arr
+        each.day = new Date each.day
+        each.open = Number each.open
+        each.low = Number each.low
+        each.high = Number each.high
+        each.close = Number each.close
+        each.volume = Number each.volume
+        #console.log each
+    callback err, arr
 
 module.exports = history
+
+### 在這行前面加或去一個#就可以測試,測試完記得加回去
+history {symbol:'150152',type:'week'},(err, arr)->
+  console.log arr
+###

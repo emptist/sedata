@@ -37,21 +37,20 @@ ticks symbols, (obj)->
   console.log('here:',買,名稱,賣5)
 
 # 5,15,30,60,day,week
-hists {symbol:'900951',type:'week',len:0},(err,json)->
+hists {symbol:'900951',type:'week'},(err,json)->
   console.log json
 
 
 # from 163.com:
 
 # daily
-stock = '000001'
 date = new Date()
 end = date.year * 1000 + date.hour * 100 + date.day
-histd {ids: stock, start:20080801, end:end}, (data)->
+histd {symbol: '000001', start:20080801, end:end}, (data)->
   console.log data
 
 # daily, week, month, 分年度取
-histdwm {market:'hs',code:'159915',year:'2016',type:'week'}, (err,json)->
+histdwm {market:'hs',symbol:'159915',year:'2016',type:'week'}, (err,json)->
   console.log json unless err?
 
 ```
