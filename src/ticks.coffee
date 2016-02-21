@@ -61,14 +61,16 @@ sinaticks = (string, callback)->
     encoding:null
 
   request options, (err, res, data)->
-    text=iconv.decode(data, 'GBK')
+    console.error  err if err
+    unless err?
+      text=iconv.decode(data, 'GBK')
 
-    # TODO: 替換掉 eval
-    eval(text)
-    for 代碼 in codes.split(',')
-      tickstr = eval("hq_str_#{代碼}")
-      hqstr2obj(代碼,tickstr,obj)
+      # TODO: 替換掉 eval
+      eval(text)
+      for 代碼 in codes.split(',')
+        tickstr = eval("hq_str_#{代碼}")
+        hqstr2obj(代碼,tickstr,obj)
 
-    callback obj
+      callback obj
 
 module.exports = sinaticks
