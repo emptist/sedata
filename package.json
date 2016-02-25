@@ -1,6 +1,6 @@
 {
   "name": "sedata",
-  "version": "0.9.2",
+  "version": "0.9.3",
   "description": "Get security data(China market only for now)",
   "main": "sedata.js",
   "scripts": {
