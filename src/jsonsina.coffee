@@ -18,9 +18,11 @@ history = (param, callback)->
     week: 60*4*5
     #month: 60*4*20 # 似乎沒有月線
 
-  c = recode param.symbol, 1
   host = "http://money.finance.sina.com.cn/quotes_service/api/json_v2.php"
-  url = "#{host}/CN_MarketData.getKLineData?symbol=#{c}&scale=#{scale[param.type]}&datalen=0"
+  c = recode param.symbol, 1
+  t = scale[param.type]
+  l = param.len ? 0
+  url = "#{host}/CN_MarketData.getKLineData?symbol=#{c}&scale=#{t}&datalen=#{l}"
   options =
     url: url
     json: false
