@@ -16,7 +16,7 @@ hqstr2obj = (代碼,tickstr,obj)->
     代碼:tick[0]
     名稱:tick[1]
     開: Number(tick[2])
-    收: Number(tick[3])
+    前: Number(tick[3])
     現: Number(tick[4])
     高: Number(tick[5])
     低: Number(tick[6])

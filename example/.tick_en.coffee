@@ -3,7 +3,7 @@ obj[code] =
   code:tick[0]
   name:tick[1]
   open: Number(tick[2])
-  close: Number(tick[3])
+  pre_close: Number(tick[3])
   latest: Number(tick[4])
   high: Number(tick[5])
   low: Number(tick[6])
