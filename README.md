@@ -25,7 +25,7 @@ ticks 從網上取得實時數據,速度取決於網絡狀況和數據源服務�
 稍後嘗試統一接口
 
 ```coffeescript
-{ticks,hists,histd,histdwm} = require 'sedata'
+{forex, ticks,hists,histd,histdwm} = require 'sedata'
 
 # from sina:
 
@@ -40,6 +40,9 @@ ticks symbols, (obj)->
 hists {symbol:'900951',type:'week'},(err,json)->
   console.log json
 
+# forex
+forex 'usdcnh', (data)->
+  console.log data
 
 # from 163.com:
 
