@@ -9,6 +9,9 @@ request = require 'request'
       type: day,week,month
 ###
 history = (param, callback)->
+  if param.symbol.length < 5
+    return callback '代碼不對',null
+
   scale =
     m05: 5
     m15: 15
