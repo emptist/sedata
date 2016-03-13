@@ -28,9 +28,10 @@ history = (param, callback)->
     json: false
 
   request.get options, (err, res, string)->
-    arr = eval string
     unless err?
-      for each in arr
+      arr = eval string
+
+      for each in arr?
         each.day = new Date each.day
         each.open = Number each.open
         each.low = Number each.low
