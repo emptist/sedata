@@ -31,22 +31,26 @@ history = (param, callback)->
     json: false
 
   request.get options, (err, res, string)->
-    unless err?
+    if err?
+      callback error, null
+    else
       try
         arr = eval string
+        if arr
+          for each in arr
+            each.day = new Date each.day
+            each.open = Number each.open
+            each.low = Number each.low
+            each.high = Number each.high
+            each.close = Number each.close
+            each.volume = Number each.volume
+            #console.log each
+          callback err, arr
       catch error
         callback error, null
-        
-      if arr
-        for each in arr
-          each.day = new Date each.day
-          each.open = Number each.open
-          each.low = Number each.low
-          each.high = Number each.high
-          each.close = Number each.close
-          each.volume = Number each.volume
-          #console.log each
-    callback err, arr
+
+
+
 
 module.exports = history
 
