@@ -33,15 +33,15 @@ history = (param, callback)->
   request.get options, (err, res, string)->
     unless err?
       arr = eval string
-
-      for each in arr?
-        each.day = new Date each.day
-        each.open = Number each.open
-        each.low = Number each.low
-        each.high = Number each.high
-        each.close = Number each.close
-        each.volume = Number each.volume
-        #console.log each
+      if arr
+        for each in arr
+          each.day = new Date each.day
+          each.open = Number each.open
+          each.low = Number each.low
+          each.high = Number each.high
+          each.close = Number each.close
+          each.volume = Number each.volume
+          #console.log each
     callback err, arr
 
 module.exports = history
