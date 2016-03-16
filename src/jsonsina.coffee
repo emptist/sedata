@@ -32,7 +32,11 @@ history = (param, callback)->
 
   request.get options, (err, res, string)->
     unless err?
-      arr = eval string
+      try
+        arr = eval string
+      catch error
+        callback error, null
+        
       if arr
         for each in arr
           each.day = new Date each.day
