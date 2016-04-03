@@ -22,7 +22,7 @@ $ npm install sedata
 
 ticks 從網上取得實時數據,速度取決於網絡狀況和數據源服務器.
 
-稍後嘗試統一接口
+去掉了js轉譯.
 
 ```coffeescript
 {forex, ticks,hists,histd,histdwm} = require 'sedata'
