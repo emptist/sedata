@@ -1,6 +1,6 @@
 {
   "name": "sedata",
-  "version": "0.9.11",
+  "version": "0.10.0",
   "description": "Get security data(China market only for now)",
   "main": "sedata.coffee",
   "scripts": {
