@@ -44,6 +44,9 @@ hqstr2obj = (代碼,tickstr,obj)->
     賣4: Number(tick[28])
     賣量5: Number(tick[29])
     賣5: Number(tick[30])
+    high: Number(tick[5]) # 即 高,便於應用
+    low: Number(tick[6]) # 即 低,便於應用
+
   obj[代碼].時間 = new Date tick[31..32].join(' ')# (tick[32..33].join(' '))
   obj[代碼].備註 = tick[33]
   obj[代碼].市場代碼 = 代碼[..1]
