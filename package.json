@@ -28,8 +28,8 @@
   },
   "homepage": "https://github.com/emptist/sedata#readme",
   "dependencies": {
-    "iconv-lite": "^0.4.13",
-    "request": "^2.69.0",
+    "iconv-lite": "*",
+    "request": "*",
     "secode": "*"
   }
 }
