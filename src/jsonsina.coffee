@@ -43,14 +43,15 @@ history = (param, callback)->
         callback error, arr
         return
 
-      for each in arr?
-        each.day = new Date each.day
-        each.open = Number each.open
-        each.low = Number each.low
-        each.high = Number each.high
-        each.close = Number each.close
-        each.volume = Number each.volume
-        #console.log each
+      if arr # 必須這樣寫,不能簡化為: for each in arr?
+        for each in arr
+          each.day = new Date each.day
+          each.open = Number each.open
+          each.low = Number each.low
+          each.high = Number each.high
+          each.close = Number each.close
+          each.volume = Number each.volume
+          #console.log each
 
       callback err, arr
 
