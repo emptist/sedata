@@ -41,6 +41,7 @@ history = (param, callback)->
         arr = eval string
       catch error
         callback error, arr
+        console.error 'jsonsina.coffee >> history', error
         return
 
       if arr # 必須這樣寫,不能簡化為: for each in arr?
