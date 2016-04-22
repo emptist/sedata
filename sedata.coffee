@@ -4,6 +4,7 @@ sinahists = require("./src/jsonsina")
 histd = require("./src/csv163")
 hist = require("./src/json126")
 qsa = require("./src/htsc")
+qsort = require("./src/sortsina")
 
 module.exports =
   forex: sinaforex
@@ -12,3 +13,4 @@ module.exports =
   histd: histd
   histdwm: hist
   qsa: qsa
+  qsort: qsort

@@ -61,6 +61,9 @@ histdwm {market:'hs',symbol:'159915',year:'2016',type:'week'}, (err,json)->
 See also example
 
 ## Data Sources
+新浪數據值得研究 重點在chrome中看network/XHR
+http://vip.stock.finance.sina.com.cn/mkt/#stock_hs_amount
+http://vip.stock.finance.sina.com.cn/quotes_service/api/json_v2.php/Market_Center.getHQNodes
 
 https://github.com/HarrisonXi/AStock/blob/master/%E5%8E%86%E5%8F%B2%E6%95%B0%E6%8D%AEAPI.md
 
