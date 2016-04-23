@@ -16,7 +16,7 @@ quotes = (param, callback) ->
     json: false
     encoding:null
 
-  request.get options, (err, res, data)->
+  request options, (err, res, data)->
     unless err?
       text = iconv.decode(data, 'GBK')
       cnt = text #res.content#.toString 'utf8'

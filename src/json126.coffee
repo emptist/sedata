@@ -15,7 +15,7 @@ history = (param, callback)->
     url: url
     json: true
 
-  request.get options, (err, res, json)->
+  request options, (err, res, json)->
     unless err?
       array2obj = (arr)->
         d = arr[0]

@@ -30,7 +30,7 @@ qsort = (param, callback)->
     retryStrategy: myRetryStrategy
 
 
-  request.get options, (err, res, data)->
+  request options, (err, res, data)->
     if err?
       callback err, null
 

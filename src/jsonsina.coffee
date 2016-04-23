@@ -42,7 +42,6 @@ history = (param, callback)->
     retryDelay: 1000  #// (default) wait for 5s before trying again
     retryStrategy: myRetryStrategy
 
-  #request.get options, (err, res, string)->
   request options, (err, res, string)->
     if err?
       callback err, null

@@ -37,7 +37,7 @@ module.exports = (kind, tx, 回執)->
       回執 'failed', null
 
 
-  request.get options, callback
+  request options, callback
 
 
 ###
