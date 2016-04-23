@@ -38,7 +38,7 @@ history = (param, callback)->
     json: false
     forever:true
     timeout: 7000
-    maxAttempts: 5  #// (default) try 5 times
+    maxAttempts: 9  #// (default) try 5 times
     retryDelay: 1000  #// (default) wait for 5s before trying again
     retryStrategy: myRetryStrategy
 
