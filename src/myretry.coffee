@@ -1,5 +1,4 @@
 module.exports = (err, res)->
   retry = err? or 500 <= res?.statusCode < 600
-  if retry
-    console.log "retry data request..."
+  #if retry then console.log "retry data request..."
   return retry
