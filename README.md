@@ -70,6 +70,9 @@ https://github.com/HarrisonXi/AStock/blob/master/%E5%8E%86%E5%8F%B2%E6%95%B0%E6%
 http://blog.sina.com.cn/s/blog_7ed3ed3d0101gphj.html
 http://www.wstock.net/wstock/5min.htm
 
+## todos
+Redo request when request for data failed after hitting a time out.
+
 ## License
 
 [MIT](LICENSE.txt)
