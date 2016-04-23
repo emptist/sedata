@@ -11,7 +11,7 @@ kind:
   szetf:'szetf'
 ###
 
-request = require 'request'
+request = require 'requestretry'
 
 # quote sort by ammount
 

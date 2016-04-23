@@ -1,4 +1,4 @@
-request = require 'request'
+request = require 'requestretry'
 iconv = require 'iconv-lite'
 {recode,restring} = require 'secode'
 

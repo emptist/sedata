@@ -1,5 +1,6 @@
-request = require 'request'
+request = require 'requestretry'
 iconv = require 'iconv-lite'
+myRetryStrategy = require './myretry'
 
 ###
 http://vip.stock.finance.sina.com.cn/quotes_service/api/json_v2.php
@@ -23,6 +24,11 @@ qsort = (param, callback)->
     url: "#{host}/Market_Center.getHQNodeData?page=1&num=#{n}&sort=#{s}&asc=0&node=#{c}&symbol=&_s_r_a=sort"
     json: false
     encoding: null
+    timeout: 7000
+    maxAttempts: 5  #// (default) try 5 times
+    retryDelay: 1000  #// (default) wait for 5s before trying again
+    retryStrategy: myRetryStrategy
+
 
   request.get options, (err, res, data)->
     if err?

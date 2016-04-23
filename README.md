@@ -72,6 +72,12 @@ http://www.wstock.net/wstock/5min.htm
 
 ## todos
 Redo request when request for data failed after hitting a time out.
+Well, npm has some packages for this:
+https://github.com/geoffreak/request-enhanced
+https://github.com/FGRibreau/node-request-retry
+https://www.npmjs.com/package/retry-request
+https://www.npmjs.com/package/then-request
+
 
 ## License
 

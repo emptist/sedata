@@ -30,6 +30,7 @@
   "dependencies": {
     "iconv-lite": "*",
     "request": "*",
+    "requestretry": "^1.6.0",
     "secode": "*"
   }
 }

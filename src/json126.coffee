@@ -1,6 +1,6 @@
-request = require 'request'
+request = require 'requestretry'
 {recode,restring} = require 'secode'
-
+#https://www.npmjs.com/package/requestretry
 
 ### param:
       market: 默認 hs--滬深

@@ -6,7 +6,7 @@
 # http://hq.sinajs.cn/?_=0.04818517481908202&list=fx_susdcnh
 # 改寫為外匯行情
 
-request = require 'request'
+request = require 'requestretry'
 iconv = require 'iconv-lite'
 
 hqstr2obj = (symbol,tickstr,obj)->

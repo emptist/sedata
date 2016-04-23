@@ -1,6 +1,10 @@
 # https://github.com/HarrisonXi/AStock/blob/master/%E5%8E%86%E5%8F%B2%E6%95%B0%E6%8D%AEAPI.md
-request = require 'request'
+#https://www.npmjs.com/package/requestretry
+
 {recode,restring} = require 'secode'
+request = require 'requestretry'
+myRetryStrategy = require './myretry'
+
 
 ### param:
       market: 默認 hs--滬深
@@ -22,15 +26,24 @@ history = (param, callback)->
     #month: 60*4*20 # 似乎沒有月線
 
   host = "http://money.finance.sina.com.cn/quotes_service/api/json_v2.php"
+  #host = "http://vip.stock.finance.sina.com.cn/quotes_service/api/json_v2.php"
   c = recode param.symbol, 1
   t = scale[param.type]
   l = param.len ? 0
   url = "#{host}/CN_MarketData.getKLineData?symbol=#{c}&scale=#{t}&datalen=#{l}"
+
+
   options =
     url: url
     json: false
+    forever:true
+    timeout: 7000
+    maxAttempts: 5  #// (default) try 5 times
+    retryDelay: 1000  #// (default) wait for 5s before trying again
+    retryStrategy: myRetryStrategy
 
-  request.get options, (err, res, string)->
+  #request.get options, (err, res, string)->
+  request options, (err, res, string)->
     if err?
       callback err, null
 
@@ -41,8 +54,11 @@ history = (param, callback)->
         arr = eval string
       catch error
         callback error, arr
-        console.error 'jsonsina.coffee >> history', error
-        return
+        console.error 'jsonsina.coffee >> 將重試 history: ', error
+        return history(param, callback)
+
+      if res?.attempts > 1
+        console.log(param.symbol,'數據請求次數: ', res.attempts)
 
       if arr # 必須這樣寫,不能簡化為: for each in arr?
         for each in arr
@@ -60,7 +76,8 @@ history = (param, callback)->
 
 module.exports = history
 
-### 在這行前面加或去一個#就可以測試,測試完記得加回去
-history {symbol:'150152',type:'week'},(err, arr)->
-  console.log arr
+#在下行前面加或去一個#就可以測試,測試完記得加回去
+###
+history {symbol:'900915',type:'day'},(err, arr)->
+  console.log err, arr?[arr.length-1]
 ###

@@ -5,6 +5,8 @@
 
 {restring,recode} = require 'secode'
 request = require 'request'
+#request = require 'requestretry'
+#myRetryStrategy = require './myretry'
 iconv = require 'iconv-lite'
 
 hqstr2obj = (代碼,tickstr,obj)->
@@ -62,9 +64,16 @@ sinaticks = (string, callback)->
     url:"http://hq.sinajs.cn/list=#{codes}"
     json: false
     encoding:null
+    forever:true
+    ###
+    timeout: 1000
+    maxAttempts: 1  #// (default) try 5 times
+    retryDelay: 1000  #// (default) wait for 5s before trying again
+    retryStrategy: myRetryStrategy
+    ###
 
   request options, (err, res, data)->
-    console.error  err if err
+    console.error "ticks >> ", err if err
     unless err?
       text=iconv.decode(data, 'GBK')
 
@@ -77,3 +86,8 @@ sinaticks = (string, callback)->
       callback obj
 
 module.exports = sinaticks
+
+###
+sinaticks '900915,159915,200488', (data)->
+  console.log data
+###
