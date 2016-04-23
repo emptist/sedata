@@ -17,10 +17,10 @@ qsort = (param, callback)->
   host = "http://vip.stock.finance.sina.com.cn/quotes_service/api/json_v2.php"
   c = param.category ? 'sh_b'
   s = param.sort ? 'amount'
-  l = param.len ? '40'
-  
+  n = param.topn ? '40'
+
   options =
-    url: "#{host}/Market_Center.getHQNodeData?page=1&num=#{l}&sort=#{s}&asc=0&node=#{c}&symbol=&_s_r_a=sort"
+    url: "#{host}/Market_Center.getHQNodeData?page=1&num=#{n}&sort=#{s}&asc=0&node=#{c}&symbol=&_s_r_a=sort"
     json: false
     encoding: null
 
