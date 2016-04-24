@@ -36,7 +36,11 @@ history = (param, callback)->
 
   host = "http://money.finance.sina.com.cn/quotes_service/api/json_v2.php"
   #host = "http://vip.stock.finance.sina.com.cn/quotes_service/api/json_v2.php"
-  c = recode param.symbol, 1
+  try
+    c = recode param.symbol, 1
+  catch error
+    callback "jsonsina >> history: #{error}", null
+
   t = scale[param.type]
   l = param.len ? 0
   url = "#{host}/CN_MarketData.getKLineData?symbol=#{c}&scale=#{t}&datalen=#{l}"
