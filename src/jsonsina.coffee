@@ -42,24 +42,22 @@ history = (param, callback)->
     retryDelay: 1000  #// (default) wait for 5s before trying again
     retryStrategy: myRetryStrategy
 
-  request options, (err, res, string)->
-    if err?
-      callback err, null
+  request options, (error, res, string)->
 
+    retry = (err)->
+      console.error "#{c} jsonsina.coffee >> history 將重試: ", err
+      history(param, callback)
+
+    if error?
+      return retry(error)
     else
-
       arr = null
       try
         arr = eval string
       catch error
-        callback error, arr
-        console.error 'jsonsina.coffee >> 將重試 history: ', error
-        return history(param, callback)
+        return retry(error)
 
-      if res?.attempts > 1
-        console.log(param.symbol,'數據請求次數: ', res.attempts)
-
-      if arr # 必須這樣寫,不能簡化為: for each in arr?
+      if arr?.length > 0 # 必須這樣寫,不能簡化為: for each in arr?
         for each in arr
           each.day = new Date each.day
           each.open = Number each.open
@@ -68,8 +66,13 @@ history = (param, callback)->
           each.close = Number each.close
           each.volume = Number each.volume
           #console.log each
+      else
+        return retry('數據長度為 0')
+        
+      if res?.attempts > 1
+        console.log(param.symbol,'數據請求次數: ', res.attempts)
 
-      callback err, arr
+      callback null, arr
 
 
 
