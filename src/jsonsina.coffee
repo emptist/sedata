@@ -12,6 +12,16 @@ myRetryStrategy = require './myretry'
       year: 年份
       type: day,week,month
 ###
+n = 3
+
+retry = (symbol, err)->
+  if n > 0
+    n--
+    console.error "#{symbol} jsonsina.coffee >> history 將重試: ", err
+    history(param, callback)
+  else
+    throw "#{symbol} jsonsina.coffee >> history 已多次重試: #{err}"
+
 history = (param, callback)->
   if param.symbol.length < 5
     return callback '代碼不對',null
@@ -44,9 +54,6 @@ history = (param, callback)->
 
   request options, (error, res, string)->
 
-    retry = (err)->
-      console.error "#{c} jsonsina.coffee >> history 將重試: ", err
-      history(param, callback)
 
     if error?
       return retry(error)
@@ -68,7 +75,7 @@ history = (param, callback)->
           #console.log each
       else
         return retry('數據長度為 0')
-        
+
       if res?.attempts > 1
         console.log(param.symbol,'數據請求次數: ', res.attempts)
 
