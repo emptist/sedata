@@ -13,18 +13,17 @@ myRetryStrategy = require './myretry'
       type: day,week,month
 ###
 n = 3
-
-retry = (symbol, err)->
-  if n > 0
-    n--
-    console.error "#{symbol} jsonsina.coffee >> history 將重試: ", err
-    history(param, callback)
-  else
-    throw "#{symbol} jsonsina.coffee >> history 已多次重試: #{err}"
-
 history = (param, callback)->
   if param.symbol.length < 5
     return callback '代碼不對',null
+
+  retry = (symbol, err)->
+    if n > 0
+      n--
+      console.error "#{param.symbol} jsonsina.coffee >> history 將重試: ", err
+      history(param, callback)
+    else
+      throw "#{param.symbol} jsonsina.coffee >> history 已多次重試: #{err}"
 
   scale =
     m05: 5
