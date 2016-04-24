@@ -23,7 +23,7 @@ history = (param, callback)->
       console.error "#{param.symbol} jsonsina.coffee >> history 將重試: ", err
       history(param, callback)
     else
-      throw "#{param.symbol} jsonsina.coffee >> history 已多次重試: #{err}"
+      callback "#{param.symbol} jsonsina >> history 已多次重試: #{err}",null
 
   scale =
     m05: 5
