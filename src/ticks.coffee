@@ -46,6 +46,8 @@ hqstr2obj = (代碼,tickstr,obj)->
     賣4: Number(tick[28])
     賣量5: Number(tick[29])
     賣5: Number(tick[30])
+    open: Number(tick[2]) # 即 開
+    close: Number(tick[4]) # 應為現,便於監控計算
     high: Number(tick[5]) # 即 高,便於應用
     low: Number(tick[6]) # 即 低,便於應用
 
