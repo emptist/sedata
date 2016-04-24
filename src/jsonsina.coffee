@@ -17,7 +17,7 @@ history = (param, callback)->
   if param.symbol.length < 5
     return callback '代碼不對',null
 
-  retry = (symbol, err)->
+  retry = (err)->
     if n > 0
       n--
       console.error "#{param.symbol} jsonsina.coffee >> history 將重試: ", err
