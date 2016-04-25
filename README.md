@@ -71,12 +71,23 @@ http://blog.sina.com.cn/s/blog_7ed3ed3d0101gphj.html
 http://www.wstock.net/wstock/5min.htm
 
 ## todos
-Redo request when request for data failed after hitting a time out.
+### other markets
+美股實時行情 可通過 http://finance.sina.com.cn/stock/usstock/sector.shtml 分析其數據來源
+例如,etf行情來自:
+http://stock.finance.sina.com.cn/usstock/api/jsonp.php/IO.XSRV2.CallbackList['xBc3GjMw7U61Mn1c']/US_DataCenterService.getInstrType?page=1&num=20&sort=pe&asc=0&market=&id=&instr_type=3
+然後再去查找歷史行情數據源
+
+
+### ~~Redo request~~
+when request for data failed after hitting a time out.
 Well, npm has some packages for this:
+*SOLVED* using requestretry.
+
 https://github.com/geoffreak/request-enhanced
 https://github.com/FGRibreau/node-request-retry
 https://www.npmjs.com/package/retry-request
 https://www.npmjs.com/package/then-request
+
 
 
 ## License
