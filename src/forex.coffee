@@ -60,6 +60,8 @@ forex = (string, callback)->
       callback obj
 
 module.exports = forex
-###test###
+
+###test
 forex 'usdcny,usdcnh',(data)->
   console.log data
+###
