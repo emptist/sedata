@@ -17,16 +17,16 @@ hqstr2obj = (symbol,tickstr,obj)->
   obj[symbol] =
     symbol:tick[0]
     現: Number(tick[2])
-    未知: Number(tick[3])
+    未知3: Number(tick[3])
     前: Number(tick[4])
     波幅: Number(tick[5])
     開: Number(tick[6])
     高: Number(tick[7]) # 賣入報價
     低: Number(tick[8]) # 賣出要價
     現: Number(tick[9])
-    名稱: Number(tick[10])
+    名稱: tick[10]
     漲幅: Number(tick[11])
-    未知: Number(tick[12])
+    漲跌: Number(tick[12])
     振幅: Number(tick[13])
     近高: Number(tick[15])
     近低: Number(tick[16])
@@ -35,7 +35,7 @@ hqstr2obj = (symbol,tickstr,obj)->
   obj[symbol].報價 = tick[14]
   return obj
 
-sinaticks = (string, callback)->
+forex = (string, callback)->
 
   # reformat the codes in string argument
 
@@ -59,4 +59,7 @@ sinaticks = (string, callback)->
 
       callback obj
 
-module.exports = sinaticks
+module.exports = forex
+###test###
+forex 'usdcny,usdcnh',(data)->
+  console.log data
