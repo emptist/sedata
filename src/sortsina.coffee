@@ -62,7 +62,7 @@ qsort = (param, callback)->
 
 module.exports = qsort
 
-### 在這行前面加或去一個#就可以測試,測試完記得加回去###
+### 在這行前面加或去一個#就可以測試,測試完記得加回去#
 qsort {category:'etf_hq_fund'},(err, arr)->
   console.log arr
 ###
