@@ -22,6 +22,11 @@ qsort = (param, callback)->
   s = param.sort ? 'amount'
   n = param.topn ? '40'
 
+  #針對 etf_hq_fund 的特殊處理,濾除貨幣基金:
+  if c is 'etf_hq_fund'
+    n += 10
+    isetf = true
+
   options =
     url: "#{host}/Market_Center.getHQNodeDataSimple?page=1&num=#{n}&sort=#{s}&asc=0&node=#{c}&symbol=&_s_r_a=sort"
     json: false
@@ -46,13 +51,18 @@ qsort = (param, callback)->
         console.error 'sortsina.coffee >> qsort', error
         return
 
-      callback err, arr
+      if isetf
+        resp = (each for each in arr when (not /^(1590|511)/.test each.code))
+      else
+        resp = arr
+
+      callback err, resp
 
 
 
 module.exports = qsort
 
-### 在這行前面加或去一個#就可以測試,測試完記得加回去
-qsort {category:'sh_b'},(err, arr)->
+### 在這行前面加或去一個#就可以測試,測試完記得加回去###
+qsort {category:'etf_hq_fund'},(err, arr)->
   console.log arr
 ###
