@@ -51,7 +51,7 @@ qsort = (param, callback)->
         console.error 'sortsina.coffee >> qsort', error
         return
 
-      if isetf
+      if isetf #去掉貨幣基金,缺行情數據故
         resp = (each for each in arr when (not /^(1590|511)/.test each.code))
       else
         resp = arr
