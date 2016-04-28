@@ -5,6 +5,7 @@ histd = require("./src/csv163")
 hist = require("./src/json126")
 qsa = require("./src/htsc")
 qsort = require("./src/sortsina")
+JisiluData = require('./src/JisiluData')
 
 module.exports =
   forex: sinaforex
@@ -14,3 +15,4 @@ module.exports =
   histdwm: hist
   qsa: qsa
   qsort: qsort
+  JisiluData:JisiluData
