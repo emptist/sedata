@@ -17,7 +17,8 @@ history = (param, callback)->
   if param.symbol.length < 5
     return callback '代碼不對',null
 
-  retry = (err)->
+  # 這是在 requestretry之外的
+  徹底重連重下 = (err)->
     if n > 0
       n--
       console.error "#{param.symbol} jsonsina.coffee >> history 將重試: ", err
@@ -51,7 +52,7 @@ history = (param, callback)->
     json: false
     forever:true
     timeout: 7000
-    maxAttempts: 9  #// (default) try 5 times
+    maxAttempts: 9  #// (default) try 9 times
     retryDelay: 1000  #// (default) wait for 5s before trying again
     retryStrategy: myRetryStrategy
 
@@ -59,13 +60,13 @@ history = (param, callback)->
 
 
     if error?
-      return retry(error)
+      return 徹底重連重下(error)
     else
       arr = null
       try
         arr = eval string
       catch error
-        return retry(error)
+        return 徹底重連重下(error)
 
       if arr?.length > 0 # 必須這樣寫,不能簡化為: for each in arr?
         for each in arr
@@ -77,7 +78,7 @@ history = (param, callback)->
           each.volume = Number each.volume
           #console.log each
       else
-        return retry('數據長度為 0')
+        return 徹底重連重下('數據長度為 0')
 
       if res?.attempts > 1
         console.log(param.symbol,'數據請求次數: ', res.attempts)
