@@ -5,7 +5,7 @@ histd = require("./src/csv163")
 hist = require("./src/json126")
 qsa = require("./src/htsc")
 qsort = require("./src/sortsina")
-JisiluData = require('./src/JisiluData')
+JisiluData = require('./src/jisilu')
 
 module.exports =
   forex: sinaforex
