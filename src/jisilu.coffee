@@ -33,11 +33,24 @@ class JisiluData
       json: true
 
     request options, (err,res, body)->
-      callback err, body # unless err?
+      callback(err, body) # unless err?
       #jj = (each for each in body.rows when each.id is "150152")
       #console.log jj[0].cell
 
+  getSymbols: (category, callback)->
+    @get category, (err, body)->
+      if err?
+        callback err,null
+        return
+         
+      cell = switch category
+        when 'fundm' then "base_fund_id"
+        else "#{category}_id"
+      callback null, (each.cell[cell] for each in body.rows)
+
+
 module.exports = JisiluData
 ###
-new JisiluData().get('funda')
+(new JisiluData()).getSymbols 'fundb', (symbols)->
+  console.log symbols
 ###
