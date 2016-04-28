@@ -33,7 +33,7 @@ class JisiluData
       json: true
 
     request options, (err,res, body)->
-      callback body unless err?
+      callback err, body # unless err?
       #jj = (each for each in body.rows when each.id is "150152")
       #console.log jj[0].cell
 
