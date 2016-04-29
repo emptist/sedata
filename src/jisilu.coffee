@@ -58,3 +58,6 @@ module.exports = JisiluData
 (new JisiluData()).getSymbols 'fundmt', (err, symbols)->
   console.log symbols
 ###
+
+
+# http://www.abcfund.cn/fund/share.php?code=164401 數據也許更好
