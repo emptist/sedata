@@ -70,6 +70,7 @@ history = (param, callback)->
 
       if arr?.length > 0 # 必須這樣寫,不能簡化為: for each in arr?
         for each in arr
+          each.date = each.day
           each.day = new Date each.day
           each.open = Number each.open
           each.low = Number each.low
