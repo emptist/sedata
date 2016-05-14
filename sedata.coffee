@@ -1,5 +1,6 @@
 sinaticks = require("./src/ticks")
 sinaforex = require("./src/forex")
+{yahooforex, convertyahoo} = require("./src/yahooforex")
 sinahists = require("./src/jsonsina")
 histd = require("./src/csv163")
 hist = require("./src/json126")
@@ -8,7 +9,9 @@ qsort = require("./src/sortsina")
 JisiluData = require('./src/jisilu')
 
 module.exports =
-  forex: sinaforex
+  forext: sinaforex
+  yahooforex: yahooforex
+  convertyahoo:convertyahoo
   ticks: sinaticks
   hists: sinahists
   histd: histd
