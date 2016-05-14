@@ -96,7 +96,7 @@ module.exports =
   convertyahoo: convertyahoo
 
 #在下行前面加或去一個#就可以測試,測試完記得加回去
-##
+###
 history {symbol:'JPYUSD',range:'max'},(err, obj)->
   console.log err,  convertyahoo obj
 ###
