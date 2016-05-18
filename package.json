@@ -4,17 +4,14 @@
   "description": "Get security data(China market only for now)",
   "main": "sedata.coffee",
   "scripts": {
-    "patch": "npm-run-all gitcommit vpatch pub",
-    "minor": "npm-run-all gitcommit vminor pub",
-    "major": "npm-run-all gitcommit vmajor pub",
+    "patch": "npm-run-all gitcommit vpatch",
+    "minor": "npm-run-all gitcommit vminor",
+    "major": "npm-run-all gitcommit vmajor",
     "gitcommit": "git add --all; git commit -am 'modified'",
     "vpatch": "npm version patch",
     "vminor": "npm version minor",
     "vmajor": "npm version major",
     "postversion": "git push",
-    "prepub": "echo 已經git push 準備 publish...",
-    "pub": "npm publish ../sedata",
-    "prepublish": "echo 現在發佈...",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

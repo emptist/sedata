@@ -1,4 +1,3 @@
-#0f5e889c5de80669e9f35faae90aea2d777e33fe
 request = require 'requestretry'
 myRetryStrategy = require './myretry'
 #https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.historicaldata%20where%20symbol%20%3D%22EUR%3DX%22%20and%20startDate%3D%222015-09-11%22%20and%20endDate%3D%222016-05-10%22&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=
