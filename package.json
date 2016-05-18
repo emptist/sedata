@@ -19,14 +19,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/emptist/sedata.git"
+    "url": "git+ssh://git@bitbucket.org:sunmoonlotus/sedata.git"
   },
   "author": "Jigme Ko <jigme1968@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/emptist/sedata/issues"
+    "url": "https://bitbucket.org/sunmoonlotus/sedata/issues"
   },
-  "homepage": "https://github.com/emptist/sedata#readme",
+  "homepage": "https://bitbucket.org/sunmoonlotus/sedata#readme",
   "dependencies": {
     "iconv-lite": "*",
     "request": "*",
