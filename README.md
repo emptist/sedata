@@ -77,6 +77,9 @@ http://www.wstock.net/wstock/5min.htm
 http://stock.finance.sina.com.cn/usstock/api/jsonp.php/IO.XSRV2.CallbackList['xBc3GjMw7U61Mn1c']/US_DataCenterService.getInstrType?page=1&num=20&sort=pe&asc=0&market=&id=&instr_type=3
 然後再去查找歷史行情數據源
 
+### other resources
+https://computeraidedfinance.com/2012/05/02/comprehensive-list-of-free-historical-market-data-sources/
+
 
 ### ~~Redo request~~
 when request for data failed after hitting a time out.
